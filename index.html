@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 1</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <div class="grid">
+    <nav class="nav">
+      <a href="../index.html">Home</a>
+    </nav>
+
+    <div class="banner">
+      <div class="scene">
+        <div id="bannerAd">
+          <a href="https://www.parakaisprings.co.nz/">
+            <img id="banner_scene1_img1" src="./assets/chuttersnap-Dif0JdAIDig-unsplash.jpg" alt="Parakai Springs">
+          </a>
+          <div id="adLine1">Parakai Springs</div>
+        </div>
+      </div>
+
+      <div class="banner2">
+        <div class="scene">
+              <div id="bannerAd2">
+            <a href="https://www.parakaisprings.co.nz/">
+              <img id="banner_scene2_img1" src="./assets/swwg8zo21c0wif2gw9kb.webp" alt="Get your FastPass">
+            </a>
+            <div id="adLine2">Parakai Springs</div>
+            <div id="adLine3">Get your FastPass today!</div>
+            <div id="adLine4">Orlando Bloor - 1550125</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="main">
+      <section>
+        <h2>Book a Ticket</h2>
+        <div class="grid-2c">
+          <div class="container-half card">
+            <progress value="10" max="100"></progress>
+            <div id="form-page1" class="form-page" style="display: block">
+              <div> <!-- page title -->
+                <h3>Step 1.</h3>
+              </div>
+              <div> <!-- page input fields -->
+                <label for="birthday">Date of Birth:</label>
+                <input type="date" id="birthday" name="birthday" class="row">
+                <label for="adults" class="row">
+                  Number of Adults:
+                  <input type="number" id="adults" />
+                </label>
+                <label for="children" class="row">
+                  Number of Children:
+                  <input type="number" id="children" />
+                </label>
+              </div>
+              <div> <!-- page nav buttons -->
+                <button class="next" type="button" onclick="showPage(2)">
+                  Next Page
+                </button>
+              </div>
+            </div>
+            <div id="form-page2" class="form-page" style="display: none">
+              <div> <!-- page title -->
+                <h3>Step 2.</h3>
+              </div>
+              <div> <!-- page input fields -->
+                <label for="name" class="row">
+                  Contact Name:
+                  <input type="text" id="contactName" />
+                </label>
+                <label for="emailAddress" class="row">
+                  Email Address:
+                  <input type="text" id="emailAddress" />
+                </label>
+              </div>
+              <div> <!-- page nav buttons -->
+                <button class="next" type="button" onclick="showPage(3)">
+                  Next Page
+                </button>
+                <button class="previous" type="button" onclick="showPage(1)">
+                  Previous Page
+                </button>
+              </div>
+            </div>
+            <div id="form-page3" class="form-page" style="display: none;">
+              <div> <!-- page title -->
+                <h3>Step 3.</h3>
+              </div>
+              <div> <!-- page data fields -->
+                <label for="colour" class="row">
+                  Ticket Colour:
+                  <input type="color" id="colour" />
+                </label>
+                <p>Storage ($5)?</p>
+                <label for="yes">
+                  <input type="radio" id="yes" name="storage" value="yes" />
+                  Yes
+                </label>
+
+                <label for="no">
+                  <input type="radio" id="no" name="storage" value="no" checked = "true" />
+                  No
+                </label>
+                
+              </div>
+              <div> <!-- page nav buttons -->
+                <button class="next" type="button" onclick="showPage(4)">
+                  Next Page
+                </button>
+                <button class="previous" type="button" onclick="showPage(2)">
+                  Previous Page
+                </button>
+              </div>
+            </div>
+            <div id="form-page4" class="form-page" style="display: none">
+              <div> <!-- page title -->
+                <h3>Step 4.</h3>
+              </div>
+              <div> <!-- page input fields -->
+                <a href="https://www.termsfeed.com/blog/sample-terms-and-conditions-template/">Terms and Conditions</a>
+
+                <input type="checkbox" id="terms" name="terms">
+                <label for="terms"> I have read the Terms and Conditions</label><br>
+                <div>
+                                <h3>Summary</h3>
+              <p>Date of Birth: <span id="summaryBirthday"></span></p>
+              <p>Number of Adults: <span id="summaryAdults"></span></p>
+              <p>Number of Children: <span id="summaryChildren"></span></p>
+              <p>Contact Name: <span id="summaryName"></span></p>
+              <p>Email Address: <span id="summaryAddress"></span></p>
+              <p>Ticket Colour: <span id="summaryColour"></span></p>
+              <p>Storage Locker: <span id="summaryStorage"></span></p>
+                  <button class="next" type="button" onclick="submitData(); showPage(5);">
+                    Submit
+                </button>
+                  <button class="previous" type="button" onclick="showPage(3)">
+                    Previous Page
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="form-page5" class="container-half card" style="display: none">
+            <div id="summary">
+            </div>
+            <div class="table-container"></div>
+            <table id="collected-data">
+              <thead>
+                <tr>
+                  <td>DOB</td>
+                  <td>Adults</td>
+                  <td>Children</td>
+                  <td>Contact Name</td>
+                  <td>Email Address</td>
+                  <td>Storage</td>
+                </tr>
+              </thead>
+            </table>
+            <button class="previous" type="button" onclick="showPage(1)">
+              Restart
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+    <div class="sidebar">
+      <div class="logo">
+        <img id="logo1" src="./assets/pngegg (1).png" alt="logo">
+      </div>
+          <div id="sidebarAd">
+        <a href="https://www.greatjourneysnz.com/">
+          <img id="sidebar_scene1" src="./assets/josh-nezon-R1Zb58LmwIY-unsplash.jpg" alt="Train">
+        </a>
+        <div id="sidebarLine1">Experience Scenic Plus</div>
+        <a href="https://www.greatjourneysnz.com/">
+          <img id="sidebar_scene2" src="./assets/maaike-vrijenhoek-CiuIuUOH7Jw-unsplash.jpg" alt="Experience a feast">
+        </a>
+        <div id="sidebarLine2">Experience a feat of scenery and regionally inspired dishes</div>
+        <a href="https://www.greatjourneysnz.com/">
+          <img id="sidebar_scene3" src="./assets/andy-holmes-oEIFOoC3gi0-unsplash.jpg" alt="Book your seat now">
+        </a>
+        <div id="sidebarLine3">BOOK</div>
+        <div id="sidebarLine4">YOUR SEAT</div>
+        <div id="sidebarLine5">NOW</div>
+        <div id="sidebarLine6">SCENIC DAY TRIPS</div>
+        <div id="sidebarLine7">SHORT BREAK PACKAGES</div>
+        <div id="sidebarLine8">GUIDED TOURS</div>
+        <div id="sidebarLine9">Orlando Bloor - 1550125</div>
+        <div id="sidebarLine10">GREAT JOURNEYS® NEW ZEALAND</div>
+        <button id="sidebarReplay" type="button">Replay</button>
+      </div>
+    </div>    
+
+  <script src="./app.js"></script>
+</body>
+
+</html>
