@@ -119,7 +119,8 @@ function getFormData() {
     const contactName = document.getElementById("contactName").value;
     const emailAddress = document.getElementById("emailAddress").value;
     const ticketColor = document.getElementById("colour").value;
-    //const storage = document.querySelector('input[name=storage]').value;
+    const storage = document.querySelector('input[name=storage]:checked').value;
+    
     
 
 
@@ -130,19 +131,21 @@ function getFormData() {
         contactName: contactName,
         emailAddress: emailAddress,
         ticketColor: ticketColor,
-        //storage: storage
+        storage: storage
     };
 }
 
 function updateSummary() {
     const data = getFormData();
-    document.getElementById("summary-birthday").textContent = data.birthday;
-    document.getElementById("summary-adults").textContent = data.adults;
-    document.getElementById("summary-children").textContent = data.children;
-    document.getElementById("summary-name").textContent = data.contactName;
-    document.getElementById("summary-address").textContent = data.emailAddress;
-    document.getElementById("summary-colour").textContent = data.ticketColor;
-    //document.getElementById("summary-storage").textContent = data.storage;
+    summaryBirthday.innerHTML = data.birthday;
+    summaryName.innerHTML = data.name;
+    summaryAdults.innerHTML = data.adults;
+    summaryChildren.innerHTML = data.children;
+    summaryName.innerHTML = data.contactName;
+    summaryAddress.innerHTML = data.emailAddress;
+     summaryColour.innerHTML = data.ticketColor;
+    summaryStorage.innerHTML = data.storage;
+    
 }
 
 function submitData() {
@@ -154,7 +157,7 @@ function submitData() {
     const cellContactName = document.createElement("td");
     const cellEmailAddress = document.createElement("td");
     const cellTicketColor = document.createElement("td");
-    //const cellStorage = document.createElement("td");
+    const cellStorage = document.createElement("td");
 
 
     dataRow.appendChild(cellBirthday);
@@ -162,8 +165,8 @@ function submitData() {
     dataRow.appendChild(cellChildren);
     dataRow.appendChild(cellContactName);
     dataRow.appendChild(cellEmailAddress);
-    dataRow.appendChild(cellTicketColor);
-    //dataRow.appendChild(cellStorage);
+     //dataRow.appendChild(cellTicketColor);
+    dataRow.appendChild(cellStorage);
 
     cellBirthday.textContent = data.birthday;
     cellAdults.textContent = data.adults;
@@ -171,11 +174,10 @@ function submitData() {
     cellContactName.textContent = data.contactName;
     cellEmailAddress.textContent = data.emailAddress;
     cellTicketColor.textContent = data.ticketColor;
-    //cellStorage.textContent = data.storage;
+    cellStorage.textContent = data.storage;
 
 
     document.getElementById("collected-data").appendChild(dataRow);
 
     showPage(1);
 }
-

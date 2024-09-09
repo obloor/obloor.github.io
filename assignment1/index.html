@@ -98,10 +98,15 @@
                   Ticket Colour:
                   <input type="color" id="colour" />
                 </label>
-                
+                <p>Storage ($5)?</p>
                 <label for="yes">
-                  <input type="radio" id="yes" name="storage" value="locker" />
-                  Storage Locker? (optional)
+                  <input type="radio" id="yes" name="storage" value="yes" />
+                  Yes
+                </label>
+
+                <label for="no">
+                  <input type="radio" id="no" name="storage" value="no" checked = "true" />
+                  No
                 </label>
                 
               </div>
@@ -124,6 +129,14 @@
                 <input type="checkbox" id="terms" name="terms">
                 <label for="terms"> I have read the Terms and Conditions</label><br>
                 <div>
+                                <h3>Summary</h3>
+              <p>Date of Birth: <span id="summaryBirthday"></span></p>
+              <p>Number of Adults: <span id="summaryAdults"></span></p>
+              <p>Number of Children: <span id="summaryChildren"></span></p>
+              <p>Contact Name: <span id="summaryName"></span></p>
+              <p>Email Address: <span id="summaryAddress"></span></p>
+              <p>Ticket Colour: <span id="summaryColour"></span></p>
+              <p>Storage Locker: <span id="summaryStorage"></span></p>
                   <button class="next" type="button" onclick="submitData(); showPage(5);">
                     Submit
                 </button>
@@ -135,15 +148,18 @@
             </div>
           </div>
           <div id="form-page5" class="container-half card" style="display: none">
+            <div id="summary">
+            </div>
             <div class="table-container"></div>
             <table id="collected-data">
               <thead>
                 <tr>
-                  <th>DOB</th>
-                  <th>Adults</th>
-                  <th>Children</th>
-                  <th>Contact Name</th>
-                  <th>Email Address</th>
+                  <td>DOB</td>
+                  <td>Adults</td>
+                  <td>Children</td>
+                  <td>Contact Name</td>
+                  <td>Email Address</td>
+                  <td>Storage</td>
                 </tr>
               </thead>
             </table>
